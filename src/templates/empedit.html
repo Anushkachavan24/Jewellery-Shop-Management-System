@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{employee.EID}}/static/cssfolder/firstpage.css">
+<style>
+    .header 
+{
+	width:80%;
+	height:30%;
+	margin-top:20px;
+	margin-right:auto;
+	margin-left:auto;
+}
+    
+    
+    ul
+    {
+        margin:0;	
+        padding:0;
+        list-style:none;
+    }
+    
+    li
+    {	
+        float:right;
+    }
+    
+    a
+    {
+        color:white;
+        width:125px;
+        text-decoration:none;
+        display:block;
+        text-align:center;
+        padding:15px;
+        text-transform:uppercase;
+        font-size:18px;
+        font-family:Verdana;
+    }
+    
+    a:hover
+    {
+        background-color:black;
+        color:grey;
+    }
+    
+    .imglog
+    {
+        position:absolute;
+        width:78%;
+        height:98%;
+        margin-top:10px;
+        margin-left:10%;
+        padding: 10px;
+        margin-bottom:20px;
+         background: rgba(0,0,0, 0.6);
+    }
+    
+ 
+    
+    .emp
+    {
+        margin-top:26px;
+        width: 98%;
+        height: 92%;
+        background-color: white;
+        padding:5px;				
+        margin-left:auto;
+        margin-right:auto;
+        border:5px solid DarkGrey;	
+        border-radius:12px;
+    }
+    
+
+    
+    .formtitle
+    {
+        margin-top: 15px;
+        color: crimson;
+        font-size: 22px;
+        font-family: Arial black;	
+    }
+    .btn
+{
+	margin-top: 10px;
+	background-color: Cornsilk;
+	border-radius: 12px;
+	border: 2px solid BlanchedAlmond;
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2), 0 1px 8px 0 rgba(0,0,0,0.19);
+	width: 35%;
+	height: 15%;
+	padding: 6px;
+	color:crimson;
+	font-size: 14px;
+	font-family: Verdana;
+}
+
+.btn:hover
+{
+	background-color: BlanchedAlmond;
+    	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.25), 0 4px 8px 0 rgba(0,0,0,0.19);
+}
+    
+</style>
+</head>
+<body>
+	<div class="header">
+		<img src="{{employee.EID}}/static/images/heart.jpg" width="100%" height="10%">
+	</div>	
+<div class="nav">
+	<center><ul><li><a href="{{ url_for('login') }}"> Logout </a></li>
+    <li><a href="{{ url_for('empdisplay') }}">Display</a></li>
+	<li><a href="{{ url_for('empdel') }}">Delete</a></li>
+	<li><a href="{{ url_for('empadd') }}"> Add </a></li>
+	<li><a href="{{ url_for('adminlogin') }}"> Home</a></li>
+	</ul></center>
+</div>
+<div class="imglog">
+	<div class="emp"><center class="formtitle"><span>E</span>mployee Details<center><br>
+	<form action="/empupdate/{{employee[0]}}" method="post">
+	<table class='fitted'> 
+	<tr>
+	<td>Name:</td><td><textarea rows="1" cols="17" name="EName">{{employee[2]}}</textarea></td>
+	</tr>
+	<tr>
+		<td>Password:</td><td><input type="numeric" name="Pass" value={{employee[1]}}></td>
+	</tr>
+	<tr>
+		<td>Govt.ID:</td><td><input type="text" name="GID" value={{employee[6]}}></td>
+	</tr>
+	<tr>
+		<td>Section:</td><td><input type="text" name="section" value={{employee[4]}}></td>
+	</tr>
+	<tr>
+		<td>Shift:</td><td><input type="text" name="shift" value={{employee[6]}}></td>
+	</tr>
+	<tr>	
+		<td>Salary:</td><td><input type="text" name="salary" value={{employee[7]}}></td>
+	</tr>
+	<tr>
+		<td>Address:</td><td><textarea rows="3" cols="22" name="addr">{{employee[3]}}</textarea></td>
+	</tr>
+	<tr>
+	<td colspan="2"><center><input type="submit" name="add" value="Update" class="btn"></center></td>
+	</tr>
+	</table>		
+	</form>
+</div>
+</div>
+</body>
+</html>

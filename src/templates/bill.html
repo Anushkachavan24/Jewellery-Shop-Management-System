@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+	<head> 	
+	<link rel="stylesheet" type="text/css" href="static/cssfolder/bill.css">
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	
+	<style type="text/css">
+	#jewellery_table
+	{
+		border : 1px solid gray;
+		border-collapse: collapse;
+	}
+	#jewellery_table td,th
+	{
+		border : 1px solid gray;
+		font-family: Arial; font-size: 10pt;
+	}
+	.row_even
+	{
+		background-color:#F8F9F9  ;
+	}
+	.row_odd
+	{
+		background-color:#FDFEFE  ;
+	}
+    table{
+        border:1px solid black;
+        border-collapse:seperate;
+        border-spacing:0px;
+        min-width:max-content;
+    }
+    th{
+        position:sticky;
+        top:0px;
+        background-color:teal;
+        color:wheat;
+    }
+    .table-wrapper{
+        max-height:500px;
+        overflow-y:scroll;
+        margin:20px;
+
+    }
+    th, td{
+        border:1px solid black;
+        padding:10px;
+    }
+    .outer-wrapper{
+        margin:20px;
+        border:1px solid black;
+        border-radius:5px;
+        box-shadow:0px 0px 3px rgba(0, 0, 0, 0.9);
+        max-width:fit-content;
+    }
+      
+	</style>
+
+      	</head>
+
+	<body>
+	<div class="header">
+		<img src="static/images/heart.jpg" width="100%" height="30%">
+	</div>		
+	<div class="nav">
+		<center><ul>
+		<li><a href="/login"> Logout</a></li>
+		<li><a href="{{ url_for('custlogin') }}">Home </a></li>
+		</ul></center>
+	</div>
+	<div class="imglog">
+                   <div class="outer">
+                    
+		<div class="stock"><center class="formtitle"><span>B</span>ill Details<center><br>
+			<form action="/billgeneration" method="post">
+			<table>
+  				<tr>
+    				<td>Bill No : </td>
+  				 <td><input type="numeric" name="billno" id="billno" value={{BID}}></td>
+  				</tr>
+				<tr>
+    				<td>Customer ID : </td>
+  				 <td><input type="numeric" name="cid" id="cid" value={{cust}} readonly="readonly" /></td>
+  				</tr>
+				<tr>
+    				<td>Employee ID : </td>
+  				 <td><input type="numeric" name="eid"></td>
+  				</tr>		
+				<tr colspan="2">
+				<td>Items: </td>
+				</tr>
+				<tr colspan="2">
+                    
+                       
+                    <table class="fitted">
+                        <thead>
+                            <tr>
+                                <th>JID</th>
+                                <th>Quantity</th>
+                                <th>Grams</th>
+                                <th>Gold</th>
+                                <th>Rate</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                    <tbody>
+                    {% for i in orders %}
+                    <tr> 
+                        
+                        <td>{{i[0]}}</td>
+                        <td>{{i[1]}}</td>
+                        <td>{{i[2]}}</td>
+                        <td>{{i[3]}}</td>
+                        <td>{{i[4]}}</td>
+                        <td>{{i[5]}}</td>
+                       
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                </table>
+				<table>
+    			
+  				</table>
+  				<input type="submit" id="savbill" name="savbill" value="Generate Bill" class="btn"> 
+			</form>
+		</div>
+	</div>
+	</div>
+	</div>
+	</body>
+</html>

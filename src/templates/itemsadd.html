@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <link rel="stylesheet" type="text/css" href="{{cust.CID}}/static/cssfolder/item.css">  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+             
+    </head>
+<style>
+    .alert_container {    
+        width: 100%;
+        height:20%;
+        background-color:rgb(255, 232, 134);
+        
+        overflow:auto;	
+        position:relative
+        text-align:left;
+      }
+    .header 
+{
+	width:80%;
+	height:30%;
+	margin-top:20px;
+	margin-right:auto;
+	margin-left:auto;
+}
+    
+    
+    ul
+    {
+        margin:0;	
+        padding:0;
+        list-style:none;
+    }
+    
+    li
+    {	
+        float:right;
+    }
+    
+    a
+    {
+        color:white;
+        width:125px;
+        text-decoration:none;
+        display:block;
+        text-align:center;
+        padding:15px;
+        text-transform:uppercase;
+        font-size:18px;
+        font-family:Verdana;
+    }
+    
+    a:hover
+    {
+        background-color:black;
+        color:grey;
+    }
+    
+    .imglog
+    {
+        position:absolute;
+        width:78%;
+        height:108%;
+        margin-top:10px;
+        margin-left:10%;
+        padding: 10px;
+        margin-bottom:20px;
+         background: rgba(0,0,0, 0.6);
+    }
+    
+ 
+    
+    .employee
+    {
+        margin-top:26px;
+        width: 120%;
+        height: 80%;
+        background-color: white;
+        padding:5px;				
+        margin-left:auto;
+        margin-right:auto;
+        border:5px solid DarkGrey;	
+        border-radius:12px;
+    }
+    
+
+    
+    .formtitle
+    {
+        margin-top: 15px;
+        color: crimson;
+        font-size: 22px;
+        font-family: Arial black;	
+    }
+    table{
+        border:1px solid black;
+        border-collapse:seperate;
+        border-spacing:0px;
+        min-width:max-content;
+    }
+    th{
+        position:sticky;
+        top:0px;
+        background-color:teal;
+        color:wheat;
+    }
+    .table-wrapper{
+        max-height:400px;
+        overflow-y:scroll;
+        margin:20px;
+    }
+    th, td{
+        border:1px solid black;
+        padding:10px;
+    }
+    .outer-wrapper{
+        margin:20px;
+        border:1px solid black;
+        border-radius:5px;
+        box-shadow:0px 0px 3px rgba(0, 0, 0, 0.9);
+        max-width:fit-content;
+    }
+
+    .btn
+    {
+        margin-top: 10px;
+        background-color: Cornsilk;
+        border-radius: 12px;
+        border: 2px solid BlanchedAlmond;
+        box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2), 0 1px 8px 0 rgba(0,0,0,0.19);
+        width: 25%;
+        height: 15%;
+        padding: 6px;
+        color:crimson;
+        font-size: 14px;
+        font-family: Verdana;
+    }
+    
+    .btn:hover
+    {
+        background-color: BlanchedAlmond;
+            box-shadow: 0 3px 6px 0 rgba(0,0,0,0.25), 0 4px 8px 0 rgba(0,0,0,0.19);
+    }
+        
+      
+</style>
+<title>
+    {% with  messages = get_flashed_messages() %}
+{% if messages %}
+{% for msg in messages %}
+<div class="alert_container">
+<p style="font-size:100%;">{{msg}}</p>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+</title>
+</head>
+<body>
+	<div class="header">
+		<img src="{{cust.CID}}/static/images/heart.jpg" width="100%" height="10%">
+	</div>	
+<div class="nav">
+	<center><ul><li><a href="{{ url_for('login') }}"> Logout </a></li>
+	<li><a href="{{ url_for('custlogin') }}"> Home</a></li>
+	</ul></center>
+</div>
+<div class="imglog">
+    
+<div class="stock">
+<div style="width: 700px; height: 100px; background-color: snow; margin-left:20px;font-style:italic; font-family: courier;margin-top: 20px; color:#652416; font-size: 17px;">
+<table>
+<tr><td>Customer Id :</td><td>{{cust[0]}}</td></tr>
+<tr><td>Name :</td><td>{{cust[1]}}</td></tr><tr><td>Govt. ID:</td><td>{{cust[3]}}</td></tr>    </table>
+</div>
+
+<div class="cust"><center class="formtitle"><center><br>
+        <div class="outer-wrapper">
+        <div class="table-wrapper">
+        <table class="fitted">
+            <thead>
+                <tr>
+                    <th>JID</th>
+                    <th>Gold</th>
+                    <th>Grams</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+        <tbody>
+        {% for i in orders %}
+        <tr>
+          
+            <td>{{i[0]}}</td>
+            <td>{{i[1]}}</td>
+            <td>{{i[2]}}</td>
+            <td>{{i[3]}}</td>
+            <td>{{i[4]}}</td>
+         
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+<center><span>A</span>dd Items<center>
+<p style="color:red;font-size:12px; margin-left:none"> (*Enter the JID present on jewellery )</p>
+<div class="container">   
+         <form name="add_name" id="add_name" method="post" action="/getorder/{{cust[0]}}">  
+                  <table class="table table-bordered" id="dynamic_field">
+                   
+                        <tr>  
+                            <form action="/getorder" method="post" >
+                          <td  class="formtitle">Jewellery ID :<input list="jitem" name="name[]"  class="form-control name_list"  autocomplete="off"> 
+                            <datalist id="jitem">
+                            <option value='3001' >'Ring'</option><option value='3002' >'Earings'</option><option value='3003' >'Bangles'</option><option value='3004' >'Chain'</option><option value='3005' >'Mangalsutra'</option><option value='3006' >'Bracelet'</option><option value='3007' >'Anklets'</option><option value='3008' >'Bangles'</option>                                          </datalist>
+                            </td>
+                           <td class="formtitle" >Quantity : <input type="number" min="1" max="4" name="quant[]" class="form-control name_list" autocomplete="off"/></td> 
+                        
+                          </form>
+                          
+                        </tr>  
+                  </table>  
+                   <input type="submit" name="genbill" id="genbill" class="genbtn" value="Add" >
+
+              </div>  
+            </form> 
+            <a href="/remove/{{cust[0]}}" class="btn">Remove</a>
+            <a href="{{ url_for('bill',cust = cust) }}" class="btn">Generate Bill</a>
+  </div>  
+</div>  
+</div>
+</div>
+</div>
+</body>
+<script>
+    $(document).ready(function(){
+        $("#jjitem").html($("#jitem").html());
+    });
+</script>
+
+</html>

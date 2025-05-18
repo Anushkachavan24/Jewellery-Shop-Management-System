@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{jewel.JID}}/static/cssfolder/firstpage.css">
+<style>
+    .header 
+{
+	width:80%;
+	height:30%;
+	margin-top:20px;
+	margin-right:auto;
+	margin-left:auto;
+}
+    
+    
+    ul
+    {
+        margin:0;	
+        padding:0;
+        list-style:none;
+    }
+    
+    li
+    {	
+        float:right;
+    }
+    
+    a
+    {
+        color:white;
+        width:125px;
+        text-decoration:none;
+        display:block;
+        text-align:center;
+        padding:15px;
+        text-transform:uppercase;
+        font-size:18px;
+        font-family:Verdana;
+    }
+    
+    a:hover
+    {
+        background-color:black;
+        color:grey;
+    }
+    
+    .imglog
+    {
+        position:absolute;
+        width:78%;
+        height:98%;
+        margin-top:10px;
+        margin-left:10%;
+        padding: 10px;
+        margin-bottom:20px;
+         background: rgba(0,0,0, 0.6);
+    }
+    
+ 
+    
+    .emp
+    {
+        margin-top:26px;
+        width: 98%;
+        height: 92%;
+        background-color: white;
+        padding:5px;				
+        margin-left:auto;
+        margin-right:auto;
+        border:5px solid DarkGrey;	
+        border-radius:12px;
+    }
+    
+
+    
+    .formtitle
+    {
+        margin-top: 15px;
+        color: crimson;
+        font-size: 22px;
+        font-family: Arial black;	
+    }
+    .btn
+{
+	margin-top: 10px;
+	background-color: Cornsilk;
+	border-radius: 12px;
+	border: 2px solid BlanchedAlmond;
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2), 0 1px 8px 0 rgba(0,0,0,0.19);
+	width: 35%;
+	height: 15%;
+	padding: 6px;
+	color:crimson;
+	font-size: 14px;
+	font-family: Verdana;
+}
+
+.btn:hover
+{
+	background-color: BlanchedAlmond;
+    	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.25), 0 4px 8px 0 rgba(0,0,0,0.19);
+}
+    
+</style>
+</head>
+<body>
+	<div class="header">
+		<img src="{{jewel.JID}}/static/images/heart.jpg" width="100%" height="10%">
+	</div>	
+<div class="nav">
+	<center><ul><li><a href="{{ url_for('login') }}"> Logout </a></li>
+    <li><a href="{{ url_for('stockdisplay') }}">Display</a></li>
+	<li><a href="{{ url_for('stockdel') }}">Update</a></li>
+	<li><a href="{{ url_for('stockadd') }}"> Add </a></li>
+	<li><a href="{{ url_for('adminlogin') }}"> Home</a></li>
+	</ul></center>
+</div>
+<div class="imglog">
+	<div class="emp"><center class="formtitle"><span>S</span>tock Details<center><br>
+	<form action="/stockupdate/{{jewel[0]}}" method="post">
+	<table class='fitted'> 
+	<tr>
+	<td>Type of Jewellery:</td><td><input type="text" name="TOJ" value={{jewel[1]}}></td>
+	</tr>
+	<tr>
+		<td>Gold:</td><td><input type="text" name="Gold" value={{jewel[2]}}></td>
+	</tr>
+	<tr>
+		<td>Grams:</td><td><input type="text" name="Grams" value={{jewel[3]}}></td>
+	</tr>
+	<tr>
+		<td>Quantity:</td><td><input type="text" name="SQuantity" value={{jewel[4]}}></td>
+	</tr>
+	<tr>	
+		<td>SID:</td><td><input type="text" name="SID" value={{jewel[6]}}></td>
+	</tr>
+	<tr>
+	<td colspan="2"><center><input type="submit" name="add" value="Update" class="btn"></center></td>
+	</tr>
+	</table>		
+	</form>
+</div>
+</div>
+</body>
+</html>

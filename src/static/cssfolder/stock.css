@@ -1,0 +1,160 @@
+body 
+{
+	background-image: url("back1.jpg");
+    	background-repeat: no-repeat;
+    	background-attachment: fixed;
+    	background-position: center; 
+}
+
+.header 
+{
+	width:80%;
+	height:30%;
+	margin-top:20px;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+.nav
+{
+	width:80%;
+	background-color:maroon;
+	margin-right:auto;
+	margin-left:auto;
+	align-text:right;
+	overflow:auto;	
+	position:relative
+ 	box-shadow:0 0 5px;
+ 	-webkit-box-shadow:5px 5px 5px;
+	text-align:right;
+	
+}
+
+ul
+{
+	margin:0;	
+	margin-left:55%;
+	padding:0;
+	list-style:none;
+}
+
+li
+{	
+	float:left;
+}
+
+a
+{
+	color:white;
+	width:125px;
+	text-decoration:none;
+	display:block;
+	text-align:center;
+	padding:15px;
+	text-transform:uppercase;
+	font-size:18px;
+	font-family:Verdana;
+}
+
+a:hover
+{
+	background-color:black;
+	color:grey;
+}
+
+.imglog
+{
+	position:absolute;
+	width:78%;
+	height:120%;
+	margin-top:10px;
+	margin-left:10%;
+	padding: 10px;
+	margin-bottom:20px;
+ 	background: rgba(0,0,0, 0.6);
+}
+
+
+.login
+{
+	width: 51%;
+	height: 125%;
+ 	background: rgba(0,0,0, 0.6);
+	float: left;
+	padding: 20px;
+}
+
+.stock
+{
+	margin-top:26px;
+	width: 50%;
+	height: 75%;
+	background-color: white;
+	padding:5px;				
+	margin-left:auto;
+	margin-right:auto;
+	border:5px solid DarkGrey;	
+	border-radius:12px;
+}
+
+.display
+{
+	width: 40%;
+	height: 125%;
+ 	background: rgba(0,0,0, 0.6);
+	float: right;
+	padding: 20px;
+}
+
+.formtitle
+{
+	margin-top: 15px;
+	color: crimson;
+	font-size: 22px;
+	font-family: Arial black;	
+}
+
+span
+{
+	color: maroon;
+	font-size: 32px;
+	font-family: Arial black;			
+}
+
+input
+{
+	height: 20px;
+	font-size: 13px;
+}
+center
+{
+	color: black;
+	font-size: 18px;
+	font-family: Verdana;
+}
+
+.btn
+{
+	margin-top: 10px;
+	background-color: Cornsilk;
+	border-radius: 12px;
+	border: 2px solid BlanchedAlmond;
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2), 0 1px 8px 0 rgba(0,0,0,0.19);
+	width: 25%;
+	height: 15%;
+	padding: 6px;
+	color:crimson;
+	font-size: 14px;
+	font-family: Verdana;
+}
+
+.btn:hover
+{
+	background-color: BlanchedAlmond;
+    	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.25), 0 4px 8px 0 rgba(0,0,0,0.19);
+}
+
+table,td
+{
+	padding: 10px;
+}

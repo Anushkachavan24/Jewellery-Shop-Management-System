@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% block css %}
+<style>
+	.alert_container {    
+		width: 100%;
+		height:20%;
+		background-color:rgb(255, 232, 134);
+		
+		overflow:auto;	
+		position:relative
+		text-align:left;
+	  }
+.header 
+{
+	width:80%;
+	height:30%;
+	margin-top:20px;
+	margin-right:auto;
+	margin-left:auto;
+}
+    
+ul
+    {
+        margin:0;	
+        padding:0;
+        list-style:none;
+    }
+    
+    li
+    {	
+        float:right;
+    }
+    
+    a
+    {
+        color:white;
+        width:125px;
+        text-decoration:none;
+        display:block;
+        text-align:center;
+        padding:15px;
+        text-transform:uppercase;
+        font-size:18px;
+        font-family:Verdana;
+    }
+    
+    a:hover
+    {
+        background-color:black;
+        color:grey;
+    }
+    
+.imglog
+{
+	position:absolute;
+	width:78%;
+	height:120%;
+	margin-top:10px;
+	margin-left:10%;
+	padding: 10px;
+	margin-bottom:20px;
+ 	background: rgba(0,0,0, 0.6);
+}
+
+.employee
+{
+	margin-top:26px;
+	width: 50%;
+	height: 92%;
+	background-color: white;
+	padding:5px;				
+	margin-left:auto;
+	margin-right:auto;
+	border:5px solid DarkGrey;	
+	border-radius:12px;
+}
+.formtitle
+{
+	margin-top: 15px;
+	color: crimson;
+	font-size: 22px;
+	font-family: Arial black;	
+}
+</style>
+{% endblock css %}
+{% block title %}
+{% with  messages = get_flashed_messages() %}
+{% if messages %}
+{% for msg in messages %}
+<div class="alert_container">
+  <p style="font-size:100%;">{{msg}}</p>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+{% endblock title %}
+{% block body %}
+<div class="nav">
+	<center><ul><li><a href="{{ url_for('login') }}"> Logout </a></li>
+	<li><a href="{{ url_for('empdisplay') }}">Display</a></li>
+	<li><a href="{{ url_for('empdel') }}">Delete</a></li>
+	<li><a href="{{ url_for('empadd') }}"> Add </a></li>
+	<li><a href="{{ url_for('adminlogin') }}"> Home</a></li>
+	</ul></center>
+</div>
+<div class="imglog">
+	<div class="employee"><center class="formtitle"><span>A</span>dd Employee Details<center><br>
+	<form action="/employeeadd" method="post">
+	<table class='fitted'> 
+	<tr>
+	<td>Name:</td><td><input type="text" name="EName"></td>
+	</tr>
+	<tr>
+		<td>Password:</td><td><input type="numeric" name="Pass"></td>
+	</tr>
+	<tr>
+		<td>Govt.ID:</td><td><input type="text" name="GID"></td>
+	</tr>
+	<tr>
+		<td>Section:</td><td><input type="text" name="section"></td>
+	</tr>
+	<tr>
+		<td>Shift:</td><td><input type="text" name="shift"></td>
+	</tr>
+	<tr>
+		<td>Contact No:</td><td><input type="numeric" name="cno"></td>
+	</tr>
+	<tr>	
+		<td>Salary:</td><td><input type="text" name="salary"></td>
+	</tr>
+	<tr>
+		<td>Address:</td><td><textarea rows="3" cols="22" name="addr">Enter address</textarea></td>
+	</tr>
+	<tr>
+	<td colspan="2"><center><input type="submit" name="add" value="Add" class="btn"></center></td>
+	</tr>
+	</table>		
+	</form>
+</div>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% block css %}
+<style>
+.header 
+{
+	width:80%;
+	height:30%;
+	margin-top:20px;
+	margin-right:auto;
+	margin-left:auto;
+}
+    
+ul
+    {
+        margin:0;	
+        padding:0;
+        list-style:none;
+    }
+    
+    li
+    {	
+        float:right;
+    }
+    
+    a
+    {
+        color:white;
+        width:125px;
+        text-decoration:none;
+        display:block;
+        text-align:center;
+        padding:15px;
+        text-transform:uppercase;
+        font-size:18px;
+        font-family:Verdana;
+    }
+    
+    a:hover
+    {
+        background-color:black;
+        color:grey;
+    }
+    
+.imglog
+{
+	position:absolute;
+	width:78%;
+	height:80%;
+	margin-top:10px;
+	margin-left:10%;
+	padding: 10px;
+	margin-bottom:20px;
+ 	background: rgba(0,0,0, 0.6);
+}
+
+.employee
+{
+	margin-top:26px;
+	width: 50%;
+	height: 92%;
+	background-color: white;
+	padding:5px;				
+	margin-left:auto;
+	margin-right:auto;
+	border:5px solid DarkGrey;	
+	border-radius:12px;
+}
+.formtitle
+{
+	margin-top: 15px;
+	color: crimson;
+	font-size: 22px;
+	font-family: Arial black;	
+}
+</style>
+{% endblock css %}
+{% block title %}
+
+{% endblock title %}
+{% block body %}
+<div class="nav">
+	<center><ul><li><a href="{{ url_for('login') }}"> Logout </a></li>
+	<li><a href="{{ url_for('stockdisplay') }}">Display</a></li>
+	<li><a href="{{ url_for('stockdel') }}">Update</a></li>
+	<li><a href="{{ url_for('stockadd') }}"> Add </a></li>
+	<li><a href="{{ url_for('adminlogin') }}"> Home</a></li>
+	</ul></center>
+</div>
+<div class="imglog">
+	<div class="employee"><center class="formtitle"><span>A</span>dd Stock<center><br>
+	<form action="/jeweladd" method="post">
+	<table class='fitted'> 
+    <tr>
+    <td>Type of Jewellery:</td><td><input type="text" name="TOJ"></td>
+    </tr>
+	<tr>
+	<td>Quantity:</td><td><input type="text" name="SQuantity"></td>
+	</tr>
+	<tr>
+		<td>Gold:</td><td><input type="text" name="Gold"></td>
+	</tr>
+	<tr>
+		<td>Grams:</td><td><input type="text" name="Grams"></td>
+	</tr>
+	<tr>
+		<td>SID:</td><td><input type="text" name="SID"></td>
+	</tr>
+	<tr>
+	<td colspan="2"><center><input type="submit" name="add" value="Add" class="btn"></center></td>
+	</tr>
+	</table>		
+	</form>
+</div>
+</div>
+
+{% endblock body %}

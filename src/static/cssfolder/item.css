@@ -1,0 +1,147 @@
+body 
+{
+	
+    	background-repeat: no-repeat;
+    	background-attachment: fixed;
+    	background-position: center; 
+}
+
+.header 
+{
+	width:80%;
+	height:30%;
+	margin-top:20px;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+.nav
+{
+	width:80%;
+	background-color:maroon;
+	margin-right:auto;
+	margin-left:auto;
+	margin-top: 4px;
+	text-align:right;
+	overflow:auto;	
+	position:relative;
+ 	box-shadow:0 0 5px;
+ 	-webkit-box-shadow:5px 5px 5px;
+	text-align:right;
+}
+
+ul
+{
+	margin:0;	
+	padding:0;
+	list-style:none;
+}
+
+li
+{	
+	float:right;
+}
+
+a
+{
+	color:white;
+	width:125px;
+	text-decoration:none;
+	display:block;
+	text-align:center;
+	padding:15px;
+	text-transform:uppercase;
+	font-size:18px;
+	font-family:Verdana;
+}
+
+a:hover
+{
+	background-color:black;
+	color:grey;
+}
+
+.imglog
+{
+	position:absolute;
+	width:79%;
+	height:120%;
+	margin-top:10px;
+	margin-left:10%;
+	padding: 10px;
+	margin-bottom:20px;
+}
+
+
+
+
+.stock
+{
+	width: 80%;
+	height: 100%;
+	background-color: white;
+	padding:5px;				
+	margin-left:16px;
+	margin-top:18px;
+	border:5px solid DarkGrey;	
+	border-radius:12px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+center
+{
+	margin-top: 10px;
+	color: crimson;
+	font-size: 22px;
+	font-family: Arial black;	
+}
+
+span
+{
+	color: maroon;
+	font-size: 32px;
+	font-family: Arial black;			
+}
+
+.formtitle{
+
+	color: black;
+	font-size: 16px;
+	font-family: Verdana;
+}
+
+table,td
+{
+	padding: 2px;
+}
+td
+{
+	padding-right: 10px;
+}
+
+button,input
+{
+	font-size: 14px;
+}
+
+.genbtn
+{
+	margin-top: 10px;
+	background-color: Cornsilk;
+	border-radius: 12px;
+	border: 2px solid BlanchedAlmond;
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2), 0 1px 8px 0 rgba(0,0,0,0.19);
+	width: 20%;
+	height: 15%;
+	padding: 6px;
+	color:crimson;
+	font-size: 14px;
+	font-family: Verdana;
+}
+
+.genbtn:hover
+{
+	background-color: BlanchedAlmond;
+    	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.25), 0 4px 8px 0 rgba(0,0,0,0.19);
+}

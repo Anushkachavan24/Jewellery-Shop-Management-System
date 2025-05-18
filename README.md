@@ -54,7 +54,8 @@ This system improves operational efficiency and helps in the seamless management
 _page](https://github.com/user-attachments/assets/c949b164-89b4-4c84-b724-4dd04f130b2e)
 ![Itemsadd_page](https://github.com/user-attachments/assets/6d7ac78c-ca30-4304-8fbc-956abe706487)
 ![Supplieradd_page](https://github.com/user-attachments/assets/68491095-4504-4bec-91f0-8eb51a993be0)
-![Supplier_edit-delete_page](https://github.com/user-attachments/assets/61c67e3f-b09e-43a3-9789-f535d3c13ccc)
+![Supplier_edit_page](https://github.com/user-attachments/assets/8e53df62-7ff1-433c-a8c3-79d7b35cd95e)
+![Supplier_edit-delete_page](https://github.com/user-attachments/assets/f759d708-a150-4519-9f10-326aa0aa102e)
 ![Update_Base_page](https://github.com/user-attachments/assets/3f0e77d6-b846-4e58-a49f-d1bd772ff596)
 ![Update_stock_page](https://github.com/user-attachments/assets/8bee1095-9d52-432c-9bc4-7276a6dbee9d)
 
